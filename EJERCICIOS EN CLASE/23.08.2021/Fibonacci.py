@@ -1,31 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 23 09:43:28 2021
+Created on Mon Aug 23 09:48:09 2021
 
 @author: Dell
 """
-# Fibonacci
 
-nterms = int(input("Cuántos términos ? "))
+def fibonacci(n):    
+    a, b = 0, 1 #a=0 y b=1
+    while a < n:
+        print(a, end=' ')
+        '''
+        c=a+b
+        a=b
+        b=c
+        '''
+        a, b = b, a+b
+    print()
 
-# first two terms
-n1, n2 = 0, 1
-count = 0
+#fibonacci(8)
 
-# check if the number of terms is valid
-if nterms <= 0:
-   print("Por favor ingrese un # entero positivo")
-# if there is only one term, return n1
-elif nterms == 1:
-   print("Fibonacci sequence upto",nterms,":")
-   print(n1)
-# generate fibonacci sequence
-else:
-   print("Fibonacci sequence:")
-   while count < nterms:
-       print(n1)
-       nth = n1 + n2
-       # update values
-       n1 = n2
-       n2 = nth
-       count += 1
